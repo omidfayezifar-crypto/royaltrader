@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#151e40">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Royal Trader">
+<title>Royal Trader | ورود پلکانی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+:root{--bg:#f5f7fb;--card:#fff;--ink:#151a2b;--muted:#8790a4;--line:#e8ebf2;--blue:#4263ff;--blue2:#6f55ff;--shadow:0 14px 40px rgba(31,42,70,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,sans-serif;font-weight:400;overflow-x:hidden}.app{width:min(100%,900px);margin:auto;padding:14px 13px 80px}
+header{display:flex;justify-content:space-between;align-items:center;padding:4px 2px 14px}.brand{display:flex;align-items:center;gap:10px}.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,var(--blue),var(--blue2));color:#fff;display:grid;place-items:center;font:800 22px Inter;box-shadow:0 9px 22px #4263ff35}.brand h1{margin:0;font-size:18px;font-weight:800}.brand p{margin:2px 0 0;font-size:10px;color:var(--muted);font-weight:300}.reset{border:1px solid var(--line);background:#fff;border-radius:11px;padding:8px 10px;color:#687086;font:500 11px Vazirmatn}
+.hero{border-radius:24px;padding:23px 20px;margin-bottom:13px;color:#fff;background:radial-gradient(circle at 90% 0,#7182ff55,transparent 40%),linear-gradient(145deg,#151e40,#405ff2);box-shadow:0 18px 40px #243b9a20}.hero .eyebrow{font:700 10px Inter;letter-spacing:1.5px;opacity:.7;direction:ltr;text-align:center}.hero h2{font-size:22px;line-height:1.55;margin:8px 0 5px;font-weight:800;text-align:center}.hero p{font-size:11px;line-height:2;color:#dce3ff;margin:0;font-weight:300;text-align:center}
+.grid{display:grid;grid-template-columns:310px minmax(0,1fr);gap:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:17px;box-shadow:var(--shadow);margin-bottom:13px}.card-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.card-title h3{font-size:13px;margin:0;font-weight:700}.badge{font:600 9px Inter;color:var(--blue);background:#eef1ff;border-radius:20px;padding:6px 9px;direction:ltr}
+.field{margin-bottom:12px}.field label{display:block;color:#697287;font-size:10px;margin-bottom:6px;font-weight:400}.input{width:100%;height:48px;border:1px solid var(--line);background:#fafbfe;border-radius:13px;padding:0 13px;outline:0;color:var(--ink);font-size:15px;font-weight:400;transition:.2s;min-width:0}.input:focus{border-color:#7890ff;box-shadow:0 0 0 4px #4263ff12}input[type=text].number-input{font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:600;direction:ltr;text-align:center;font-variant-numeric:tabular-nums}input[type=number]{font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:600;direction:ltr;text-align:center;font-variant-numeric:tabular-nums}.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}.seg{display:grid;grid-template-columns:1fr 1fr;padding:3px;background:#f1f3f8;border-radius:13px}.seg button{height:40px;border:0;background:transparent;border-radius:10px;color:#8991a3;font:500 11px Vazirmatn}.seg button.active{background:#fff;color:var(--blue);box-shadow:0 4px 12px #1d2a5010;font-weight:700}.primary{width:100%;height:49px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;font:700 13px Vazirmatn;box-shadow:0 10px 22px #4263ff2b}.notice{font-size:9px;line-height:1.9;color:#806326;background:#fff9eb;border:1px solid #f3e1b6;border-radius:11px;padding:9px 11px;margin-top:10px;font-weight:300}
+.summary{background:#151e40;color:#fff;border-radius:20px;padding:16px;margin-bottom:13px}.summary-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.summary small{font-size:9px;color:#aeb8d8;font-weight:300}.summary .avg{font:800 clamp(22px,8vw,32px) Inter;color:#fff;direction:ltr;text-align:center;margin-top:3px;white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums}.summary .unit{font:400 9px Vazirmatn;color:#aeb8d8;white-space:nowrap}.mini{display:flex;gap:8px;margin-top:13px}.mini div{flex:1;min-width:0;background:#ffffff0c;border:1px solid #ffffff10;border-radius:11px;padding:8px}.mini b{display:block;font:700 clamp(10px,3.5vw,13px) Inter;direction:ltr;text-align:center;white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums}.mini span{display:block;text-align:center;font-size:8px;color:#aeb8d8;font-weight:300}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:13px}.stat{min-width:0;background:#fff;border:1px solid var(--line);border-radius:17px;padding:13px 10px;box-shadow:var(--shadow)}.stat small{display:block;text-align:center;font-size:9px;color:var(--muted);font-weight:400}.stat strong{display:block;margin-top:5px;font:800 clamp(14px,5.8vw,22px) Inter,Arial,sans-serif;direction:ltr;text-align:center;white-space:nowrap;overflow:visible;text-overflow:clip;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.steps{display:flex;flex-direction:column;gap:8px}.step{position:relative;display:grid;grid-template-columns:34px minmax(0,1fr) 92px;align-items:center;gap:9px;padding:11px;background:#fafbfe;border:1px solid #edf0f5;border-radius:15px;min-width:0}.stepno{width:31px;height:31px;border-radius:10px;background:#edf1ff;color:var(--blue);display:grid;place-items:center;font:800 13px Inter}.stepmain{min-width:0}.stepname{font-size:9px;color:var(--muted);margin-bottom:3px}.price{font:800 clamp(16px,5.2vw,21px) Inter;direction:ltr;text-align:right;white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums;min-width:0}.stepmeta{font-size:8px;color:#98a0b0;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stepmeta b{font:600 10px Inter;color:#596276}.alloc{text-align:center;min-width:0}.cum{display:inline-block;margin-top:5px;padding:4px 6px;border-radius:7px;background:#eaf8f3;color:#07956a;font:700 9px Inter;direction:ltr;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}.cum-label{display:block;font:300 7px Vazirmatn;color:#7b9a90;margin-bottom:1px}.alloc strong{display:block;font:700 11px Inter;direction:ltr;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.alloc span{font-size:7px;color:var(--muted);white-space:nowrap}
+.chart{height:175px;position:relative;display:flex;align-items:flex-end;gap:12px;padding:22px 7px 8px;border-radius:15px;background:#fafbfe;border:1px solid #edf0f5}.barwrap{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;min-width:0}.bar{width:48%;min-width:22px;max-width:48px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#7182ff,#4263ff)}.barlabel{font:600 9px Inter;color:#697287;direction:ltr;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.stage-label{font-size:8px;color:#9aa1b0}
+.adaptive-number{font-family:Inter,Arial,sans-serif!important;direction:ltr!important;text-align:center!important;white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important;line-height:1.08;letter-spacing:-.7px;font-variant-numeric:tabular-nums}
+@media(max-width:380px){.adaptive-number{letter-spacing:-.9px}}
+.footer{text-align:center;color:#9ba2b2;font-size:9px;font-weight:300;margin:22px 0 0;line-height:2}.footer strong{font-weight:500;color:#747c8e}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.app{max-width:560px}}
+@media(max-width:380px){.app{padding-left:10px;padding-right:10px}.summary .avg{font-size:24px}.stat strong{font-size:16px}.price{font-size:17px}.mini{gap:5px}.step{grid-template-columns:31px minmax(0,1fr) 82px;gap:7px}.stepno{width:29px;height:29px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">P</div><div><h1>پله‌یار</h1><p>محاسبه‌گر ورود پلکانی سرمایه · WEB APP</p></div></div><button class="reset" onclick="resetAll()">↻ بازنشانی</button></header>
+<section class="hero"><div class="eyebrow">SMART ENTRY PLANNER</div><h2>با گروه سرمایه‌گذاری رویال تریدر هوشمندانه سرمایه‌گذاری کن</h2><p>سرمایه و قیمت پایه را وارد کن؛ چهار پله ورود، حجم هر مرحله و میانگین خرید را فوراً ببین.<br><strong style="font-family:Inter,Arial,sans-serif;direction:ltr;display:inline-block;margin-top:4px">WWW.ROYALTRADER.IR</strong></p></section>
+
+<div class="grid">
+<section>
+<div class="card">
+<div class="card-title"><h3>تنظیم سناریو</h3><span class="badge">4 STAGES</span></div>
+<div class="field"><label>کل سرمایه</label><input id="capital" class="input number-input" type="text" inputmode="decimal" value="100,000,000"></div>
+<div class="row"><div class="field"><label>قیمت پایه</label><input id="price" class="input number-input" type="text" inputmode="numeric" value="10,000"></div><div class="field"><label>فاصله پله (%)</label><input id="step" class="input" type="number" value="3" min="0" step=".1"></div></div>
+<div class="field"><label>جهت ورود</label><div class="seg"><button id="down" class="active" onclick="setDir('down')">نزولی ↓</button><button id="up" onclick="setDir('up')">صعودی ↑</button></div></div>
+<div class="field"><label>تخصیص سرمایه</label><select id="model" class="input"><option value="147">Martingale 1-2-4-7</option><option value="equal">تساوی 25% / 25% / 25% / 25%</option><option value="custom">سفارشی</option></select></div>
+<div id="customBox" style="display:none"><div class="field"><label>وزن‌ها (%)</label><div class="row"><input id="w1" class="input" value="7.14" type="number"><input id="w2" class="input" value="14.29" type="number"></div><div class="row" style="margin-top:8px"><input id="w3" class="input" value="28.57" type="number"><input id="w4" class="input" value="50" type="number"></div></div></div>
+<div class="field"><label>قیمت فعلی — اختیاری</label><input id="current" class="input number-input" type="text" inputmode="numeric" placeholder="برای P&L"></div>
+<button class="primary" onclick="calculate()">محاسبه سناریو</button>
+<div class="notice">Martingale ریسک افت سرمایه را افزایش می‌دهد. این ابزار صرفاً محاسباتی است و تضمینی برای سودآوری ندارد.</div>
+</div>
+</section>
+
+<section>
+<div class="summary"><div class="summary-top"><div style="min-width:0;flex:1"><small>میانگین قیمت خرید</small><div id="sAvg" class="avg adaptive-number">—</div></div><span class="unit">AVERAGE ENTRY</span></div><div class="mini"><div><span>مجموع سهم</span><b id="sShares" class="adaptive-number">—</b></div><div><span>سرمایه باقی‌مانده</span><b id="sRemain" class="adaptive-number">—</b></div><div><span>بازده</span><b id="sReturn" class="adaptive-number">—</b></div></div></div>
+<div class="stats"><div class="stat"><small>کل سرمایه</small><strong id="sCapital" class="adaptive-number">—</strong></div><div class="stat"><small>سرمایه مصرف‌شده</small><strong id="sUsed" class="adaptive-number">—</strong></div><div class="stat"><small>قیمت آخرین پله</small><strong id="sLast" class="adaptive-number">—</strong></div><div class="stat"><small>نقطه سر‌به‌سر</small><strong id="sBreak" class="adaptive-number">—</strong></div></div>
+<div class="card"><div class="card-title"><h3>چهار نقطه ورود</h3><span class="badge">AUTO</span></div><div id="steps" class="steps"></div></div>
+<div class="card"><div class="card-title"><h3>نمودار پلکان قیمت</h3><span class="badge">PRICE</span></div><div id="chart" class="chart"></div><div id="pnl" class="notice" style="display:none"></div></div>
+</section>
+</div>
+<div class="footer">پله‌یار — ابزار محاسبه ورود پلکانی<br><strong>برنامه‌نویس، طراح و ایده‌پرداز: امید فایزی‌فر</strong></div>
+</div>
+
+<script>
+let direction="down";
+const $=id=>document.getElementById(id);
+const nf=new Intl.NumberFormat("en-US",{maximumFractionDigits:2,useGrouping:true});
+const num=n=>nf.format(n);
+const priceNum=n=>new Intl.NumberFormat("en-US",{maximumFractionDigits:0,useGrouping:true}).format(Math.round(n));
+const raw=v=>String(v??"").replace(/,/g,"").trim();
+function inputValue(id){return parseFloat(raw($(id).value))||0}
+function formatInput(el){
+  if(!el.value)return;
+  const old=el.value, pos=el.selectionStart??old.length;
+  const before=old.slice(0,pos), digitsBefore=before.replace(/[^0-9.]/g,"").length;
+  let value=raw(old), parts=value.split(".");
+  let integer=(parts[0]||"").replace(/^0+(?=\d)/,"");
+  if(integer==="")integer="0";
+  let formatted=integer.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  if(parts.length>1)formatted+="."+parts.slice(1).join("");
+  el.value=formatted;
+  let i=0,count=0;
+  while(i<formatted.length&&count<digitsBefore){if(/[0-9.]/.test(formatted[i]))count++;i++}
+  try{el.setSelectionRange(i,i)}catch(e){}
+}
+function setDir(d){direction=d;$("down").classList.toggle("active",d==="down");$("up").classList.toggle("active",d==="up");calculate()}
+["capital","price","current"].forEach(id=>$(id).addEventListener("input",e=>{
+  formatInput(e.target);
+  if(id==="price"||id==="current"){
+    const v=inputValue(id);
+    if(v) e.target.value=new Intl.NumberFormat("en-US",{maximumFractionDigits:0,useGrouping:true}).format(Math.round(v));
+  }
+  calculate();
+}));
+["step","w1","w2","w3","w4"].forEach(id=>$(id).addEventListener("input",calculate));
+$("model").addEventListener("change",()=>{$("customBox").style.display=$("model").value==="custom"?"block":"none";calculate()});
+function calculate(){
+  let capital=inputValue("capital"),base=inputValue("price"),step=inputValue("step")/100;
+  if(capital<=0||base<=0)return;
+  let weights;
+  if($("model").value==="147")weights=[1,2,4,7].map(x=>x/14);
+  else if($("model").value==="equal")weights=[.25,.25,.25,.25];
+  else{let a=[+$("w1").value||0,+$("w2").value||0,+$("w3").value||0,+$("w4").value||0],sum=a.reduce((x,y)=>x+y,0);weights=sum?a.map(x=>x/sum):[.25,.25,.25,.25]}
+  let rows=[],prices=[],totalShares=0,totalCost=0,cumulativeShares=0;
+  for(let i=0;i<4;i++){
+    let p=i===0?base:(direction==="down"?prices[i-1]*(1-step):prices[i-1]*(1+step));prices.push(p);
+    let alloc=capital*weights[i],shares=Math.floor(alloc/p),actual=shares*p;
+    totalShares+=shares;totalCost+=actual;
+    cumulativeShares+=shares;rows.push({i,p,alloc,shares,actual,w:weights[i]*100,chg:i?((p/prices[i-1]-1)*100):0,cumulative:cumulativeShares});
+  }
+  let avg=totalShares?totalCost/totalShares:0,remain=capital-totalCost,cur=inputValue("current"),pnl=cur?(cur-avg)*totalShares:0,pct=cur&&avg?(cur/avg-1)*100:0;
+  $("sAvg").textContent=num(avg);$("sShares").textContent=num(totalShares);$("sRemain").textContent=num(remain);$("sReturn").textContent=cur?(pct>=0?"+":"")+num(pct)+"%":"—";
+  $("sCapital").textContent=num(capital);$("sUsed").textContent=num(totalCost);$("sLast").textContent=num(prices[3]);$("sBreak").textContent=num(avg);
+  $("steps").innerHTML=rows.map(r=>`<div class="step"><div class="stepno">${r.i+1}</div><div class="stepmain"><div class="stepname">مرحله ${r.i+1} · ${r.w.toFixed(2)}%</div><div class="price adaptive-number">${priceNum(r.p)}</div><div class="stepmeta">تعداد سهم: <b class="adaptive-number">${num(r.shares)}</b> · سرمایه: <b class="adaptive-number">${num(r.actual)}</b></div></div><div class="alloc"><strong class="adaptive-number">${r.i?((r.chg>0?"+":"")+r.chg.toFixed(2)+"%"):"BASE"}</strong><span>${direction==="down"?"↓ ورود پایین‌تر":"↑ ورود بالاتر"}</span><div class="cum"><span class="cum-label">مجموع سهم تا این پله</span>${num(r.cumulative)}</div></div></div>`).join("");
+  let max=Math.max(...prices),min=Math.min(...prices),range=max-min||1;
+  $("chart").innerHTML=rows.map(r=>`<div class="barwrap"><div class="bar" style="height:${24+(r.p-min)/range*105}px"></div><div class="barlabel">${priceNum(r.p)}</div><div class="stage-label">P${r.i+1}</div></div>`).join("");
+  fitAllNumbers();if(cur){$("pnl").style.display="block";$("pnl").textContent=`قیمت فعلی ${num(cur)} · سود/زیان ${num(pnl)} · بازده ${pct>=0?"+":""}${num(pct)}%`}else $("pnl").style.display="none";
+}
+
+function fitNumeric(el){
+  if(!el || !el.textContent.trim())return;
+  el.style.fontSize="";
+  const max=parseFloat(getComputedStyle(el).fontSize)||22;
+  const min=11;
+  const parent=el.parentElement;
+  if(!parent)return;
+  let available=Math.max(20,parent.clientWidth-4);
+  let size=max;
+  el.style.fontSize=size+"px";
+  let guard=0;
+  while(el.scrollWidth>available && size>min && guard<40){
+    size=Math.max(min,size-0.7);
+    el.style.fontSize=size+"px";
+    guard++;
+  }
+}
+function fitAllNumbers(){
+  document.querySelectorAll(".adaptive-number").forEach(fitNumeric);
+}
+const numberObserver=new ResizeObserver(()=>fitAllNumbers());
+document.querySelectorAll(".stat,.summary,.mini div,.stepmain,.alloc").forEach(el=>numberObserver.observe(el));
+window.addEventListener("resize",fitAllNumbers);
+
+function resetAll(){location.reload()}
+formatInput($("capital"));formatInput($("price"));calculate();setTimeout(fitAllNumbers,50);
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+}
+</script>
+</body>
+</html>
