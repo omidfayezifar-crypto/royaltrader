@@ -1,0 +1,16 @@
+{
+  "name":"Royal Trader | ورود پلکانی",
+  "short_name":"Royal Trader",
+  "description":"وب‌اپلیکیشن محاسبه ورود پلکانی سرمایه",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"portrait",
+  "background_color":"#f5f7fb",
+  "theme_color":"#151e40",
+  "lang":"fa",
+  "dir":"rtl",
+  "icons":[
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
